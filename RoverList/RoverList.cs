@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace RoverList
     class RoverList : RoverListBase
     {
         // Add any variables you need here
-        int c = 0;
+        private int count = 0;
         
         
         public RoverList ()
@@ -17,10 +18,11 @@ namespace RoverList
             head = null;
         }
 
+//        public override int Count => count;
         public override int Count
         {
             get {
-                    return c;
+                    return count;
                 }
         }
 
@@ -37,12 +39,12 @@ namespace RoverList
                 current.Next = new Node(data);
                 current = current.Next;
             }
-            c++;
+            count++;
         }
 
         public override void Add(int Position, object data)
         {
-            throw new NotImplementedException();
+           
         }
 
         public override void Clear()
@@ -57,12 +59,32 @@ namespace RoverList
 
         public override void ListNodes()
         {
-            throw new NotImplementedException();
+            Node node = head;
+
+            while (node != null)
+            {
+                Console.Write(node.Data + " ");
+
+                node = node.Next;
+            }
         }
 
         public override bool RemoveAt(int Position)
         {
-            throw new NotImplementedException();
+            Node node = head;
+
+            // Debug.Assert(Position < count, "Index out of bounds");
+            if (Position < 0 || Position >= count)
+                throw new IndexOutOfRangeException();
+
+            for(int i=0;i<Position;i++)
+            {
+                node = node.Next;
+            }
+            node = null;
+
+            count--;
+            return true;
         }
     }
 }

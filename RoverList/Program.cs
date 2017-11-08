@@ -28,19 +28,20 @@ namespace RoverList
             list.Add("also");
             list.Add("kill");
             list.Add("my");
-            list.Add("self");
-            
-            
+            list.Add("mind");
 
-            // TODO:  Print out the list
-            foreach( item in )
-            {
-                Console.WriteLine(list);
-            }
+
+
+            //  TODO:  Print out the list
+            list.ListNodes();
 
 
 
             // TODO:  Remove every 3rd word
+            list.RemoveAt(1);
+
+            list.ListNodes();
+
             // TODO:  Print out the list
 
             // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"

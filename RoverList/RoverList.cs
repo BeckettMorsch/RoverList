@@ -85,6 +85,10 @@ namespace RoverList
 
             count--;
             return true;
+
+
+
+            // node.Next = node.Next.Next;
         }
     }
 }

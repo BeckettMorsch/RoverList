@@ -46,19 +46,54 @@ namespace RoverList
             // TODO:  Print out the list
             list.ListNodes();
 
-            Console.WriteLine("\n" + list.ElementAt(1));
-            // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
-            // TODO:  Print out the list
 
-            // TODO:  Prompt the user to input words, add those words to the FRONT of the list until they enter the word "done"
+            // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
+            Console.WriteLine("Add words to the list");
+            bool done = false;
+            String word;
+            while (done == false)
+            {
+                word = Console.ReadLine();
+                if (word == "done")
+                    done = true;
+
+                else
+                list.Add(word);
+            }
+
+
             // TODO:  Print out the list
+            list.ListNodes();
+            
+            
+            // TODO:  Prompt the user to input words, add those words to the FRONT of the list until they enter the word "done"
+
+            
+            
+            
+            // TODO:  Print out the list
+            list.ListNodes();
 
             // TODO:  Remove every word with an odd length
+            String words;
+            for (int i =0;i<list.Count;i++)
+            {
+                words = list.ElementAt(i);
+                if ( words.Length % 2 != 0)
+                    list.RemoveAt(i);
+
+            }
+
+
             // TODO:  Print out the list
+            list.ListNodes();
 
             // TODO:  Clear the list
-            // TODO:  Print out the list
+            list.Clear();
 
+
+            // TODO:  Print out the list
+            list.ListNodes();
 
         }
     }

@@ -44,7 +44,17 @@ namespace RoverList
 
         public override void Add(int Position, object data)
         {
-           //
+            Node node = head;
+        // doesn't work
+            for(int i=0;i<Position-1;i++)
+            {
+                node = node.Next;
+
+            }
+            data = node.Next;
+
+
+
         }
 
         public override void Clear()
@@ -62,7 +72,7 @@ namespace RoverList
         public override Node ElementAt(int Position)
         {
             Node node = head;
-
+            //maybe
             for(int i=0;i<Position-1; i++)
             {
                 node = node.Next;

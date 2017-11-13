@@ -38,12 +38,15 @@ namespace RoverList
 
 
             // TODO:  Remove every 3rd word
-            list.RemoveAt(1);
-
+            for (int i = 2; i < list.Count; i = i+2)
+            {
+                list.RemoveAt(i);
+            }
+            
+            // TODO:  Print out the list
             list.ListNodes();
 
-            // TODO:  Print out the list
-
+            Console.WriteLine("\n" + list.ElementAt(1));
             // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
             // TODO:  Print out the list
 

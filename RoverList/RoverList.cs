@@ -51,23 +51,17 @@ namespace RoverList
                 node = node.Next;
 
             }
-            data = node.Next;
 
 
+            node.Next = node.Next.Next;
 
         }
 
         public override void Clear()
         {
-           // Node node = head;
-            //node.Next = null;
+           
             head = null;
-            /*/
-            for (int i=0;i<count; i++)
-            {
-                node.Next = null;
-                node = node.Next;
-            }/*/
+            
             count = 0;
         }
 

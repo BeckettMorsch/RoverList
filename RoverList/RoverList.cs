@@ -70,7 +70,9 @@ namespace RoverList
             Node node = head;
             //maybe
             if (Position < 0 || Position >= count)
+            {
                 throw new IndexOutOfRangeException();
+            }
 
             for (int i=0;i<Position-1; i++)
             {
@@ -97,8 +99,9 @@ namespace RoverList
 
             // Debug.Assert(Position < count, "Index out of bounds");
             if (Position < 0 || Position >= count)
+            {
                 throw new IndexOutOfRangeException();
-
+            }
             for(int i=0;i<Position-1;i++)
             {
                 node = node.Next;

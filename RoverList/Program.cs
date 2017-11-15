@@ -42,13 +42,14 @@ namespace RoverList
             {
                 list.RemoveAt(i);
             }
-            
+
             // TODO:  Print out the list
+            Console.WriteLine("\n");
             list.ListNodes();
 
 
             // TODO:  Prompt the user to input words, add those words to the list until they enter the word "done"
-            Console.WriteLine("Add words to the list");
+            Console.WriteLine("\n Add words to the list");
             bool done = false;
             String word;
             while (done == false)
@@ -63,18 +64,20 @@ namespace RoverList
 
 
             // TODO:  Print out the list
+            Console.WriteLine("\n");
             list.ListNodes();
-            
-            
+
+
             // TODO:  Prompt the user to input words, add those words to the FRONT of the list until they enter the word "done"
 
-            
-            
-            
+
+
+
             // TODO:  Print out the list
+            Console.WriteLine("\n");
             list.ListNodes();
 
-            // TODO:  Remove every word with an odd length
+            /*/ TODO:  Remove every word with an odd length
             String words;
             for (int i =0;i<list.Count;i++)
             {
@@ -82,18 +85,22 @@ namespace RoverList
                 if ( words.Length % 2 != 0)
                     list.RemoveAt(i);
 
-            }
+            }/*/
 
 
             // TODO:  Print out the list
+            Console.WriteLine("\n");
             list.ListNodes();
 
             // TODO:  Clear the list
+            
             list.Clear();
 
 
             // TODO:  Print out the list
+            Console.WriteLine("\n");
             list.ListNodes();
+            Console.WriteLine("\n HELLO!!1");
 
         }
     }

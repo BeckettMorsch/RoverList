@@ -59,13 +59,15 @@ namespace RoverList
 
         public override void Clear()
         {
-            Node node = head;
-            node = null;
-
-            while (node.Next != null)
+           // Node node = head;
+            //node.Next = null;
+            head = null;
+            /*/
+            for (int i=0;i<count; i++)
             {
                 node.Next = null;
-            }
+                node = node.Next;
+            }/*/
             count = 0;
         }
 
@@ -73,7 +75,10 @@ namespace RoverList
         {
             Node node = head;
             //maybe
-            for(int i=0;i<Position-1; i++)
+            if (Position < 0 || Position >= count)
+                throw new IndexOutOfRangeException();
+
+            for (int i=0;i<Position-1; i++)
             {
                 node = node.Next;
             }

@@ -91,11 +91,12 @@ namespace RoverList
             {
                 
                 words = list.ElementAt(i).Data.ToString();
-                
-                if (words.Length % 2 != 0 || words.Length == 1 )
+
+                if (words.Length % 2 != 0 || words.Length == 1)
                 {
                     list.RemoveAt(i);
                 }
+
                 Console.WriteLine("\n" + words + "\n");
 
 

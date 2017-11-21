@@ -44,16 +44,33 @@ namespace RoverList
 
         public override void Add(int Position, object data)
         {
-            Node node = head;
+            Node next = head;
+            Node prev = null;
             // doesn't work
-            for(int i=0;i<Position-1;i++)
+            for(int i=0;i<count;i++)
             {
-                node = node.Next;
+               if(i==Position)
+                {
+                    Node node = new Node(data);
+                    node.Next = next;
+                    if(prev != null)
+                    {
+                        prev.Next = null;
+                    }
+                    else
+                    {
+                        head = node;
+                    }
+                    count++;
+                }
+                prev = next;
+                if(next.Next != null)
+                {
+                    next = next.Next;
+                }
             }
 
-
-            node.Next = node.Next.Next;
-
+    
         }
 
         public override void Clear()
@@ -84,7 +101,7 @@ namespace RoverList
         public override void ListNodes()
         {
             Node node = head;
-
+           // if(node== null) { node = node.Next; }
             while (node != null)
             {
                 Console.Write(node.Data + " ");
@@ -95,25 +112,30 @@ namespace RoverList
 
         public override bool RemoveAt(int Position)
         {
-            Node node = head;
+             Node node = head;
 
-            // Debug.Assert(Position < count, "Index out of bounds");
-            if (Position < 0 || Position >= count)
-            {
-                throw new IndexOutOfRangeException();
-            }
-            for(int i=0;i<Position-1;i++)
-            {
-                node = node.Next;
-            }
-            node.Next = node.Next.Next;
 
-            count--;
+            if (Position == 0)
+            {
+                node = null;
+            }
+            else
+            {
+                for (int i = 0; i < Position - 1; i++)
+                {
+                    node = node.Next;
+                }
+                node.Next = node.Next.Next;
+            }
+
+             count--;
+
+
             return true;
 
 
 
-            // node.Next = node.Next.Next;
+            
         }
     }
 }

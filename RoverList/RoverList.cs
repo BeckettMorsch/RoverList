@@ -117,7 +117,7 @@ namespace RoverList
 
             if (Position == 0)
             {
-                node = null;
+                node = node.Next;
             }
             else
             {

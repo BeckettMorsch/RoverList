@@ -124,7 +124,7 @@ namespace RoverList
             
 
             // TODO:  Print out the list
-            Console.WriteLine("\n hi");
+            
             list.ListNodes();
 
             // TODO:  Clear the list
@@ -135,7 +135,7 @@ namespace RoverList
             // TODO:  Print out the list
             Console.WriteLine("\n");
             list.ListNodes();
-            Console.WriteLine("\n HELLO!!1");
+            
 
         }
     }

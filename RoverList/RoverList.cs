@@ -112,15 +112,18 @@ namespace RoverList
 
         public override bool RemoveAt(int Position)
         {
-             Node node = head;
+            Node node = head;
 
 
             if (Position == 0)
             {
-                node = node.Next;
+                head = node.Next;
+                node = null;
             }
+
             else
-            {
+            { 
+
                 for (int i = 0; i < Position - 1; i++)
                 {
                     node = node.Next;
